@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>Java小游戏-飞机大战 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/bg/bgpicture.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Java小游戏-飞机大战">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-06-17 18:59" pubdate>
+        2021-06-17 6:59
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      44
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Java小游戏-飞机大战</h1>
+            
+            <div class="markdown-body">
+              <h1 id="Java小游戏-飞机大战"><a href="#Java小游戏-飞机大战" class="headerlink" title="Java小游戏-飞机大战"></a>Java小游戏-飞机大战</h1><h2 id="项目结构："><a href="#项目结构：" class="headerlink" title="项目结构："></a>项目结构：</h2><p><img src="/2021/06/17/planewar/image-20210617190351585.png" srcset="/img/loading.gif" lazyload alt="image-20210617190351585"></p>
+<p>img文件夹：飞机，子弹、背景的图片</p>
+<p>ui文件夹：具体的实现类</p>
+<h2 id="GameFrame窗口"><a href="#GameFrame窗口" class="headerlink" title="GameFrame窗口"></a>GameFrame窗口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> ui;<br><br><span class="hljs-keyword">import</span> javax.swing.*;<br><br><span class="hljs-comment">//游戏的窗体类：JFrame</span><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">    自定义窗体步骤：固定的模式</span><br><span class="hljs-comment">    1.写一个类，继承JFrame</span><br><span class="hljs-comment">    2.写一个构造方法，初始化窗体的属性</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GameFrame</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">JFrame</span> </span>&#123;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">GameFrame</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-comment">//设置标题</span><br>        setTitle(<span class="hljs-string">&quot;全民飞机大战&quot;</span>);<br>        <span class="hljs-comment">//设置大小</span><br>        setSize(<span class="hljs-number">512</span>,<span class="hljs-number">768</span>);<br>        <span class="hljs-comment">/*设置窗体位置居中显示</span><br><span class="hljs-comment">          null：表示想对屏幕左上角居中</span><br><span class="hljs-comment">        */</span><br>        setLocationRelativeTo(<span class="hljs-keyword">null</span>);<br>        <span class="hljs-comment">//设置不允许玩家改变界面大小</span><br>        setResizable(<span class="hljs-keyword">false</span>);<br>        <span class="hljs-comment">//设置默认的关闭选项，关闭窗体时退出程序</span><br>        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        GameFrame frame=<span class="hljs-keyword">new</span> GameFrame();<br>        <span class="hljs-comment">//创建面板对象，调用面板的构造方法，制作面板</span><br>        GamePanel panel=<span class="hljs-keyword">new</span> GamePanel(frame);<span class="hljs-comment">//frame 方便在面板中添加键盘监听器</span><br>        <span class="hljs-comment">//调用开始游戏的方法</span><br>        panel.action();<br>        <span class="hljs-comment">//将面板加入到窗体中</span><br>        frame.add(panel);<br>        <span class="hljs-comment">//显示窗体</span><br>        frame.setVisible(<span class="hljs-keyword">true</span>);<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="GamePanel游戏画板"><a href="#GamePanel游戏画板" class="headerlink" title="GamePanel游戏画板"></a>GamePanel游戏画板</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> ui;<br><br><span class="hljs-keyword">import</span> javax.swing.*;<br><span class="hljs-keyword">import</span> java.awt.*;<br><span class="hljs-keyword">import</span> java.awt.event.KeyAdapter;<br><span class="hljs-keyword">import</span> java.awt.event.KeyEvent;<br><span class="hljs-keyword">import</span> java.awt.event.MouseAdapter;<br><span class="hljs-keyword">import</span> java.awt.event.MouseEvent;<br><span class="hljs-keyword">import</span> java.awt.image.BufferedImage;<br><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.List;<br><span class="hljs-keyword">import</span> java.util.Random;<br><br><span class="hljs-comment">//Java中的游戏面板：JPanel</span><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">    自定义游戏面板</span><br><span class="hljs-comment">    1.写一个类，继承JPanel</span><br><span class="hljs-comment">    2.写一个构造方法，初始化面板的属性</span><br><span class="hljs-comment">    画图片的步骤：</span><br><span class="hljs-comment">    1.在类中定义图片，并取名</span><br><span class="hljs-comment">    2.在构造方法中，调用工具初始化图片</span><br><span class="hljs-comment">    3.在画图方法中，paint中，画图片</span><br><span class="hljs-comment">     */</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GamePanel</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">JPanel</span> </span>&#123;<br>    <span class="hljs-comment">//1.定义背景图</span><br>    BufferedImage bg;<br>    <span class="hljs-comment">//创建英雄机</span><br>    HeroPanel heroPanel=<span class="hljs-keyword">new</span> HeroPanel();<br>    <span class="hljs-comment">//创建敌机大本营</span><br>    List&lt;EPlanes&gt; ePlanesList=<span class="hljs-keyword">new</span> ArrayList&lt;EPlanes&gt;();<br>    <span class="hljs-comment">//创建英雄机的弹药库</span><br>    List&lt;Fire&gt; fs=<span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>    <span class="hljs-comment">//游戏分数</span><br>    <span class="hljs-keyword">int</span> score;<br>    <span class="hljs-comment">//设置游戏的开关</span><br>    <span class="hljs-keyword">boolean</span> gameover=<span class="hljs-keyword">false</span>;<span class="hljs-comment">//游戏开始时，gameover为false，游戏结束时gameover为true</span><br>    <span class="hljs-comment">//设置英雄机的火力</span><br>    <span class="hljs-keyword">int</span> power=<span class="hljs-number">1</span>;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 开始游戏的方法</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span></span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">action</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-comment">//创建并启动一个线程，控制游戏场景中物体移动</span><br>        <span class="hljs-keyword">new</span> Thread()&#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123;<br>                <span class="hljs-comment">//死循环，游戏一直运行</span><br>                <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>)&#123;<br>                    <span class="hljs-keyword">if</span>(!gameover)&#123;<br>                        <span class="hljs-comment">//调用敌机入场的方法</span><br>                        epEnter();<br>                        <span class="hljs-comment">//调用让敌机移动的方法</span><br>                        epMove();<br>                        <span class="hljs-comment">//发射子弹</span><br>                        shoot();<br>                        <span class="hljs-comment">//子弹移动</span><br>                        fireMove();<br>                        <span class="hljs-comment">//判断子弹是否打到敌机</span><br>                        shootEp();<br>                        <span class="hljs-comment">//判断敌机是否撞到了英雄机</span><br>                        hit();<br>                    &#125;<br>                    <span class="hljs-comment">//每执行一次休眠</span><br>                    <span class="hljs-keyword">try</span> &#123;<br>                        Thread.sleep(<span class="hljs-number">30</span>);<br>                    &#125; <span class="hljs-keyword">catch</span> (InterruptedException e) &#123;<br>                        e.printStackTrace();<br>                    &#125;<br>                    <span class="hljs-comment">//重绘</span><br>                    repaint();<br>                &#125;<br>            &#125;<br>        &#125;.start();<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 检测敌机是否撞到了英雄机</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">hit</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-comment">//遍历敌机</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; ePlanesList.size(); i++) &#123;<br>            <span class="hljs-comment">//获得一个敌机</span><br>            EPlanes e=ePlanesList.get(i);<br>            <span class="hljs-comment">//如果敌机被英雄机撞到</span><br>            <span class="hljs-keyword">if</span>(e.hitBy(heroPanel))&#123;<br>                <span class="hljs-comment">//1.删除敌机</span><br>                ePlanesList.remove(e);<br>                <span class="hljs-comment">//2.英雄机的血量减少</span><br>                heroPanel.hp--;<br>                power=<span class="hljs-number">1</span>;<br>                <span class="hljs-comment">//3.增加分数</span><br>                score+=<span class="hljs-number">10</span>;<br>                <span class="hljs-comment">//当英雄机的血量减少到0时，游戏结束</span><br>                <span class="hljs-keyword">if</span>(heroPanel.hp&lt;=<span class="hljs-number">0</span>)&#123;<br>                    <span class="hljs-comment">//游戏结束</span><br>                    gameover=<span class="hljs-keyword">true</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 检测子弹打敌机</span><br><span class="hljs-comment">     * 排除移除屏幕的</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">shootEp</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-comment">//遍历所有的子弹</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; fs.size(); i++) &#123;<br>            Fire f=fs.get(i);<br>            <span class="hljs-comment">//每拿一颗子弹，就判断是否击中敌机</span><br>            bang(f);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 判断一颗子弹是否击中敌机</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">bang</span><span class="hljs-params">(Fire f)</span></span>&#123;<br>        <span class="hljs-comment">//遍历所有的敌机</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; ePlanesList.size(); i++) &#123;<br>            EPlanes e=ePlanesList.get(i);<br>            <span class="hljs-comment">//判断是否击中敌机</span><br>            <span class="hljs-keyword">if</span>(e.shootBy(f))&#123;<br>                <span class="hljs-comment">//若击中，敌机消失，子弹消失</span><br>                <span class="hljs-comment">//1.让敌机的血量减少</span><br>                e.hp--;<br>                <span class="hljs-comment">//当敌机血量减少到0时</span><br>                <span class="hljs-keyword">if</span>(e.hp&lt;=<span class="hljs-number">0</span>)&#123;<br>                    <span class="hljs-comment">//判断敌机是否是道具机</span><br>                    <span class="hljs-keyword">if</span>(e.type==<span class="hljs-number">13</span>)&#123;<br>                        <span class="hljs-comment">//增加火力值</span><br>                        power++;<br>                        <span class="hljs-comment">//如果power&gt;3，增加血量</span><br>                        <span class="hljs-keyword">if</span>(power&gt;<span class="hljs-number">3</span>)&#123;<br>                            heroPanel.hp++;<br>                            <span class="hljs-keyword">if</span>(heroPanel.hp&gt;<span class="hljs-number">5</span>)&#123;<br>                                heroPanel.hp=<span class="hljs-number">5</span>;<br>                            &#125;<br>                            power=<span class="hljs-number">3</span>;<br>                        &#125;<br>                    &#125;<br>                    ePlanesList.remove(e);<span class="hljs-comment">//从敌机大本营中删除敌机</span><br>                    <span class="hljs-comment">//增加分数</span><br>                    score+=<span class="hljs-number">10</span>;<br>                &#125;<br>                fs.remove(f);<span class="hljs-comment">//子弹库中删除子弹</span><br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 子弹移动的方法</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">fireMove</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; fs.size(); i++) &#123;<br>            <span class="hljs-comment">//获取一个子弹</span><br>            Fire f=fs.get(i);<br>            f.move();<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 发射子弹的方法</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">int</span> findex=<span class="hljs-number">0</span>;<span class="hljs-comment">//计数器，记录shoot方法执行的次数</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">shoot</span><span class="hljs-params">()</span></span>&#123;<br>        findex ++;<br>        <span class="hljs-keyword">if</span>(findex&gt;=<span class="hljs-number">15</span>)&#123;<br>            <span class="hljs-keyword">if</span>(power==<span class="hljs-number">1</span>)&#123;<br>                <span class="hljs-comment">//创建子弹</span><br>                Fire fire2=<span class="hljs-keyword">new</span> Fire(heroPanel.x+<span class="hljs-number">45</span>,heroPanel.y-<span class="hljs-number">20</span>,<span class="hljs-number">1</span>);<br>                <span class="hljs-comment">//将子弹加到弹药库</span><br>                fs.add(fire2);<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(power==<span class="hljs-number">2</span>)&#123;<br>                <span class="hljs-comment">//创建子弹</span><br>                Fire fire1=<span class="hljs-keyword">new</span> Fire(heroPanel.x+<span class="hljs-number">12</span>,heroPanel.y,<span class="hljs-number">0</span>);<br>                <span class="hljs-comment">//将子弹加到弹药库</span><br>                fs.add(fire1);<br>                <span class="hljs-comment">//创建子弹</span><br>                Fire fire2=<span class="hljs-keyword">new</span> Fire(heroPanel.x+<span class="hljs-number">45</span>,heroPanel.y-<span class="hljs-number">20</span>,<span class="hljs-number">1</span>);<br>                <span class="hljs-comment">//将子弹加到弹药库</span><br>                fs.add(fire2);<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                <span class="hljs-comment">//创建子弹</span><br>                Fire fire1=<span class="hljs-keyword">new</span> Fire(heroPanel.x+<span class="hljs-number">12</span>,heroPanel.y,<span class="hljs-number">0</span>);<br>                <span class="hljs-comment">//将子弹加到弹药库</span><br>                fs.add(fire1);<br>                <span class="hljs-comment">//创建子弹</span><br>                Fire fire2=<span class="hljs-keyword">new</span> Fire(heroPanel.x+<span class="hljs-number">45</span>,heroPanel.y-<span class="hljs-number">20</span>,<span class="hljs-number">1</span>);<br>                <span class="hljs-comment">//将子弹加到弹药库</span><br>                fs.add(fire2);<br>                <span class="hljs-comment">//创建子弹</span><br>                Fire fire3=<span class="hljs-keyword">new</span> Fire(heroPanel.x+<span class="hljs-number">78</span>,heroPanel.y,<span class="hljs-number">2</span>);<br>                <span class="hljs-comment">//将子弹加到弹药库</span><br>                fs.add(fire3);<br>            &#125;<br>            findex =<span class="hljs-number">0</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 敌机移动的方法</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">epMove</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-comment">//遍历所有的敌机</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; ePlanesList.size(); i++) &#123;<br>            <span class="hljs-comment">//获取每一个敌机</span><br>            EPlanes e=ePlanesList.get(i);<br>            <span class="hljs-comment">//敌机移动</span><br>            e.move();<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 敌机入场的方法</span><br><span class="hljs-comment">     * 此方法在死循环中调用的，所以该方法会一直重复执行</span><br><span class="hljs-comment">     * 执行 20次 epEnter方法才出现一个敌机</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">int</span> index=<span class="hljs-number">0</span>;<span class="hljs-comment">//记录方法执行的次数，每执行n此 释放一个敌机</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">epEnter</span><span class="hljs-params">()</span></span>&#123;<br>        index++;<br>        <span class="hljs-keyword">if</span>(index&gt;=<span class="hljs-number">30</span>-score/<span class="hljs-number">20</span>)&#123;<br>            <span class="hljs-comment">//创建敌机</span><br>            EPlanes ePlanes=<span class="hljs-keyword">new</span> EPlanes();<br>            <span class="hljs-comment">//将敌机加入到敌机大本营中</span><br>            ePlanesList.add(ePlanes);<br>            index=<span class="hljs-number">0</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">GamePanel</span><span class="hljs-params">(GameFrame frame)</span></span>&#123;<br>        <span class="hljs-comment">//设置背景</span><br>        setBackground(Color.pink);<br>        <span class="hljs-comment">//初始化图片</span><br>        bg = AppUtil.getImg(<span class="hljs-string">&quot;/img/bg2.jpg&quot;</span>);<br>        <span class="hljs-comment">//使用鼠标监听器</span><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 1.创建鼠标适配器</span><br><span class="hljs-comment">         * 2.确定需要监听的鼠标的事件</span><br><span class="hljs-comment">         *      mouseMoved() 监听鼠标移动</span><br><span class="hljs-comment">         *      mouseCliked() 监听鼠标单击事件</span><br><span class="hljs-comment">         *      mousePressed() 监听鼠标按下去的事件</span><br><span class="hljs-comment">         *      mouseEnterd() 监听鼠标移入游戏界面事件</span><br><span class="hljs-comment">         *      mouseExited() 监听鼠标移出游戏界面事件</span><br><span class="hljs-comment">         *      MouseEvent：鼠标的书剑，记录鼠标做的事情</span><br><span class="hljs-comment">         *  3.适配器加入到监听器中</span><br><span class="hljs-comment">         */</span><br>        MouseAdapter adapter=<span class="hljs-keyword">new</span> MouseAdapter() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">mouseClicked</span><span class="hljs-params">(MouseEvent e)</span> </span>&#123;<br>                <span class="hljs-comment">//点击鼠标时</span><br>                <span class="hljs-comment">//如果游戏结束了，点击屏幕时重新开始游戏</span><br>                <span class="hljs-keyword">if</span>(gameover)&#123;<br>                    <span class="hljs-comment">//重新开始游戏</span><br>                    <span class="hljs-comment">//重新创建一个英雄机</span><br>                    heroPanel=<span class="hljs-keyword">new</span> HeroPanel();<br>                    <span class="hljs-comment">//重置游戏的开关</span><br>                    gameover=<span class="hljs-keyword">false</span>;<br>                    score=<span class="hljs-number">0</span>;<br>                    <span class="hljs-comment">//清空敌机集合</span><br>                    ePlanesList.clear();<br>                    <span class="hljs-comment">//清空子弹集合</span><br>                    fs.clear();<br>                    <span class="hljs-comment">//随机背景图</span><br>                    Random rd=<span class="hljs-keyword">new</span> Random();<br>                    <span class="hljs-keyword">int</span> index=rd.nextInt(<span class="hljs-number">5</span>)+<span class="hljs-number">1</span>;<br>                    bg=AppUtil.getImg(<span class="hljs-string">&quot;/img/bg&quot;</span>+index+<span class="hljs-string">&quot;.jpg&quot;</span>);<br>                    <span class="hljs-comment">//刷新界面</span><br>                    repaint();<br>                &#125;<br>            &#125;<br><br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">mouseMoved</span><span class="hljs-params">(MouseEvent e)</span> </span>&#123;<br>                <span class="hljs-comment">//让英雄机的横纵坐标等于鼠标的横纵坐标，获取鼠标坐标</span><br>                <span class="hljs-keyword">int</span> mx=e.getX();<br>                <span class="hljs-keyword">int</span> my=e.getY();<br>                <span class="hljs-comment">//如果游戏没有结束</span><br>                <span class="hljs-keyword">if</span>(!gameover)&#123;<br>                    <span class="hljs-comment">//鼠标移动时，让英雄机与鼠标一起移动</span><br>                    heroPanel.moveToMouse(mx,my);<br>                &#125;<br>                <span class="hljs-comment">//刷新界面，将英雄机绘制在新的位置上，重新调用paint()方法</span><br>                repaint();<br>            &#125;<br>        &#125;;<br>        <span class="hljs-comment">//加入监听器</span><br>        addMouseListener(adapter);<br>        addMouseMotionListener(adapter);<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 使用键盘监听器</span><br><span class="hljs-comment">         * 1.创建键盘适配器</span><br><span class="hljs-comment">         * 2.确定监听事件</span><br><span class="hljs-comment">         *  keyPressed() 按键盘</span><br><span class="hljs-comment">         * 3.适配器加入到监听器中</span><br><span class="hljs-comment">         */</span><br>        KeyAdapter kad=<span class="hljs-keyword">new</span> KeyAdapter() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">keyPressed</span><span class="hljs-params">(KeyEvent e)</span> </span>&#123;<br>                <span class="hljs-comment">/**</span><br><span class="hljs-comment">                 * 监听键盘的按键，每个按键都有编码</span><br><span class="hljs-comment">                 * 获取键盘对应编码 W:87 S:83 A:65 D 68 空格:32</span><br><span class="hljs-comment">                 */</span><br>                <span class="hljs-keyword">int</span> keyCode=e.getKeyCode();;<br>                <span class="hljs-keyword">if</span>(!gameover)&#123;<br>                    <span class="hljs-keyword">if</span>(keyCode==KeyEvent.VK_UP)&#123;<br>                        <span class="hljs-comment">//按了上键向上移动</span><br>                        heroPanel.moveUp();<br>                    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(keyCode==KeyEvent.VK_DOWN)&#123;<br>                        heroPanel.moveDown();<br>                    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(keyCode==KeyEvent.VK_LEFT)&#123;<br>                        heroPanel.moveLeft();<br>                    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(keyCode==KeyEvent.VK_RIGHT)&#123;<br>                        heroPanel.moveRight();<br>                    &#125;<br>                    repaint();<br>                &#125;<br>            &#125;<br>        &#125;;<br>        <span class="hljs-comment">//加入监听器（加到窗体的键盘监听器中）</span><br>        frame.addKeyListener(kad);<br>    &#125;<br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">    专用画图方法</span><br><span class="hljs-comment">    Graphics g 画笔</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">paint</span><span class="hljs-params">(Graphics g)</span> </span>&#123;<br>        <span class="hljs-keyword">super</span>.paint(g);<br>        <span class="hljs-comment">//画图片</span><br>        <span class="hljs-comment">//g.drawImage(图片,图片的横坐标,图片的纵坐标,null)</span><br>        <span class="hljs-comment">//横纵坐标，是设置图片左上角的坐标</span><br>        g.drawImage(bg,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-keyword">null</span>);<br>        <span class="hljs-comment">//在paint中画图存在顺序，先画会被后画的覆盖</span><br>        <span class="hljs-comment">//画英雄机</span><br>        g.drawImage(heroPanel.img,heroPanel.x,heroPanel.y,heroPanel.w,heroPanel.h,<span class="hljs-keyword">null</span>);<br>        <span class="hljs-comment">//画敌机，遍历敌机大本营</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; ePlanesList.size(); i++) &#123;<br>            EPlanes ep=ePlanesList.get(i);<br>            g.drawImage(ep.img,ep.x,ep.y,ep.w,ep.h,<span class="hljs-keyword">null</span>);<br>        &#125;<br>        <span class="hljs-comment">//画子弹</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; fs.size(); i++) &#123;<br>            <span class="hljs-comment">//获取一个子弹</span><br>            Fire fire=fs.get(i);<br>            g.drawImage(fire.img,fire.x,fire.y,fire.w,fire.h,<span class="hljs-keyword">null</span>);<br>        &#125;<br>        <span class="hljs-comment">//画分数</span><br>        g.setColor(Color.white);<br>        g.setFont(<span class="hljs-keyword">new</span> Font(<span class="hljs-string">&quot;楷体&quot;</span>,Font.BOLD,<span class="hljs-number">20</span>));<br>        g.drawString(<span class="hljs-string">&quot;分数：&quot;</span>+score,<span class="hljs-number">10</span>,<span class="hljs-number">30</span>);<br><br>        <span class="hljs-comment">//画英雄机的血量</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; heroPanel.hp; i++) &#123;<br>            g.drawImage(heroPanel.img,<span class="hljs-number">300</span>+i*<span class="hljs-number">35</span>,<span class="hljs-number">5</span>,<span class="hljs-number">30</span>,<span class="hljs-number">30</span>,<span class="hljs-keyword">null</span>);<br>        &#125;<br><br>        <span class="hljs-comment">//游戏结束时画gameover</span><br>        <span class="hljs-keyword">if</span> (gameover) &#123;<br>            g.setColor(Color.green);<br>            g.fillRect(<span class="hljs-number">0</span> , <span class="hljs-number">200</span>, <span class="hljs-number">512</span> ,<span class="hljs-number">200</span>);<br>            g.setColor(Color.red);<br>            g.setFont(<span class="hljs-keyword">new</span> Font(<span class="hljs-string">&quot;楷体&quot;</span>,Font.BOLD,<span class="hljs-number">35</span>));<br>            g.drawString(<span class="hljs-string">&quot;GAMEOVER!&quot;</span>,<span class="hljs-number">150</span>,<span class="hljs-number">300</span>);<br>            g.setColor(Color.red);<br>            g.setFont(<span class="hljs-keyword">new</span> Font(<span class="hljs-string">&quot;楷体&quot;</span>,Font.BOLD,<span class="hljs-number">20</span>));<br>            g.drawString(<span class="hljs-string">&quot;点击屏幕任意处重新开始!&quot;</span>,<span class="hljs-number">130</span>,<span class="hljs-number">350</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="AppUtil图片工具类"><a href="#AppUtil图片工具类" class="headerlink" title="AppUtil图片工具类"></a>AppUtil图片工具类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> ui;<br><br><span class="hljs-keyword">import</span> javax.imageio.ImageIO;<br><span class="hljs-keyword">import</span> java.awt.image.BufferedImage;<br><span class="hljs-keyword">import</span> java.io.IOException;<br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">处理图片的工具类</span><br><span class="hljs-comment">工具类的写法：工具类中一般会将项目中需要重复使用代码抽离出来，定义成工具方法</span><br><span class="hljs-comment"> 工具类中的方法，一般需要加static</span><br><span class="hljs-comment"> static特点：</span><br><span class="hljs-comment"> 公用的，所有对象都共用这一方法</span><br><span class="hljs-comment"> static修饰不依赖对象，可以直接通过类名调用</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppUtil</span> </span>&#123;<br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">      读取指定位置上的图片</span><br><span class="hljs-comment">      BufferedImage Java中用来表示图片的类</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> BufferedImage <span class="hljs-title">getImg</span><span class="hljs-params">(String path)</span> </span>&#123;<br>        <span class="hljs-comment">/*</span><br><span class="hljs-comment">        App.class 找到App类的路径</span><br><span class="hljs-comment">        getResource 获取资源</span><br><span class="hljs-comment">        path 图片的路径</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">try</span> &#123;<br>            BufferedImage img = ImageIO.read(AppUtil.class.getResource(path));<br>            <span class="hljs-keyword">return</span> img;<br>        &#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;<br>            <span class="hljs-comment">//捕获找不到的原因</span><br>            e.printStackTrace();<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="FlyObject飞行物父类"><a href="#FlyObject飞行物父类" class="headerlink" title="FlyObject飞行物父类"></a>FlyObject飞行物父类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> ui;<br><br><span class="hljs-keyword">import</span> java.awt.image.BufferedImage;<br><br><span class="hljs-comment">//场景中的飞行物</span><br><span class="hljs-comment">//在开发中，我们通常会将具有形同特点的类放到一起，将这些相同的抽离出来</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FlyObject</span> </span>&#123;<br>    <span class="hljs-comment">//飞行物的图片</span><br>    BufferedImage img;<br>    <span class="hljs-keyword">int</span> x;<span class="hljs-comment">//横坐标</span><br>    <span class="hljs-keyword">int</span> y;<span class="hljs-comment">//纵坐标</span><br>    <span class="hljs-keyword">int</span> w;<span class="hljs-comment">//宽度</span><br>    <span class="hljs-keyword">int</span> h;<span class="hljs-comment">//高度</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="HeroPanel玩家飞机"><a href="#HeroPanel玩家飞机" class="headerlink" title="HeroPanel玩家飞机"></a>HeroPanel玩家飞机</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> ui;<br><br><span class="hljs-keyword">import</span> java.awt.image.BufferedImage;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 英雄机类</span><br><span class="hljs-comment"> * 属性对应特点，方法对应行为</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HeroPanel</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">FlyObject</span></span>&#123;<br>    <span class="hljs-keyword">int</span> hp;<span class="hljs-comment">//英雄机的血量</span><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 确定英雄机的特点</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HeroPanel</span><span class="hljs-params">()</span></span>&#123;<br>        img= AppUtil.getImg(<span class="hljs-string">&quot;/img/hero.png&quot;</span>);<span class="hljs-comment">//显示图片</span><br>        x=<span class="hljs-number">200</span>;<br>        y=<span class="hljs-number">500</span>;<br>        w=img.getWidth();<br>        h=img.getHeight();<br>        <span class="hljs-comment">//确定游戏开始时英雄机的初始血量</span><br>        hp=<span class="hljs-number">3</span>;<br>    &#125;<br>    <span class="hljs-comment">//英雄机移动到鼠标位置上的方法</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">moveToMouse</span><span class="hljs-params">(<span class="hljs-keyword">int</span> mx,<span class="hljs-keyword">int</span> my)</span></span>&#123;<br>        x=mx-w/<span class="hljs-number">2</span>;<br>        y=my-h/<span class="hljs-number">2</span>;<br>    &#125;<br>    <span class="hljs-comment">//向上移动的方法</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">moveUp</span><span class="hljs-params">()</span></span>&#123;<br>        y-=<span class="hljs-number">10</span>;<br>    &#125;<br>    <span class="hljs-comment">//向下移动的方法</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">moveDown</span><span class="hljs-params">()</span></span>&#123;<br>        y+=<span class="hljs-number">10</span>;<br>    &#125;<br>    <span class="hljs-comment">//向左移动的方法</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">moveLeft</span><span class="hljs-params">()</span></span>&#123;<br>        x-=<span class="hljs-number">10</span>;<br>    &#125;<br>    <span class="hljs-comment">//向右移动的方法</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">moveRight</span><span class="hljs-params">()</span></span>&#123;<br>        x+=<span class="hljs-number">10</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="Fire飞机子弹"><a href="#Fire飞机子弹" class="headerlink" title="Fire飞机子弹"></a>Fire飞机子弹</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> ui;<br><span class="hljs-comment">//子弹类</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Fire</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">FlyObject</span></span>&#123;<br>    <span class="hljs-keyword">int</span> dir;<span class="hljs-comment">//子弹移动的方向，0：左上角 1：垂直 2：右上角</span><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 构造方法，初始化子弹</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Fire</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hx,<span class="hljs-keyword">int</span> hy,<span class="hljs-keyword">int</span> dir)</span></span>&#123;<br>        <span class="hljs-comment">//确定子弹的图片</span><br>        img=AppUtil.getImg(<span class="hljs-string">&quot;/img/fire.png&quot;</span>);<br>        w=img.getWidth()/<span class="hljs-number">4</span>;<br>        h=img.getHeight()/<span class="hljs-number">4</span>;<br>        <span class="hljs-comment">//初始位置在英雄机</span><br>        x=hx;<br>        y=hy;<br>        <span class="hljs-keyword">this</span>.dir=dir;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 子弹移动的方法</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">if</span>(dir==<span class="hljs-number">0</span>)&#123;<br>            <span class="hljs-comment">//左上角飞</span><br>            x-=<span class="hljs-number">1</span>;<br>            y-=<span class="hljs-number">10</span>;<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(dir==<span class="hljs-number">1</span>)&#123;<br>            <span class="hljs-comment">//垂直</span><br>            y-=<span class="hljs-number">10</span>;<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-comment">//右上角</span><br>            x+=<span class="hljs-number">1</span>;<br>            y-=<span class="hljs-number">10</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="NPC飞机"><a href="#NPC飞机" class="headerlink" title="NPC飞机"></a>NPC飞机</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> ui;<br><br><span class="hljs-keyword">import</span> java.util.Random;<br><br><span class="hljs-comment">//敌机类</span><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">* 敌机数量很多  Java中存放多个数据：数组，集合</span><br><span class="hljs-comment">* 敌机的数量是未知的</span><br><span class="hljs-comment">* */</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EPlanes</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">FlyObject</span></span>&#123;<br>    <span class="hljs-keyword">int</span> hp;<br>    <span class="hljs-keyword">int</span> type;<span class="hljs-comment">//敌机的类型</span><br>    <span class="hljs-keyword">int</span> speed;<span class="hljs-comment">//敌机的速度</span><br>    <span class="hljs-comment">//定型敌机</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">EPlanes</span><span class="hljs-params">()</span></span>&#123;<br>        Random rd=<span class="hljs-keyword">new</span> Random();<br>        <span class="hljs-keyword">int</span> index=rd.nextInt(<span class="hljs-number">15</span>)+<span class="hljs-number">1</span>;<br>        <span class="hljs-comment">//设置敌机的类型</span><br>        type=index;<br>        <span class="hljs-comment">//三目运算符</span><br>        <span class="hljs-comment">//格式：条件表达式?值1:值2</span><br>        String path=<span class="hljs-string">&quot;/img/ep&quot;</span>+(index&lt;<span class="hljs-number">10</span>?<span class="hljs-string">&quot;0&quot;</span>:<span class="hljs-string">&quot;&quot;</span>)+index+<span class="hljs-string">&quot;.png&quot;</span>;<br>        img=AppUtil.getImg(path);<br>        w=img.getWidth();<br>        h=img.getHeight();<br>        <span class="hljs-comment">//nextInt(num)，表示会在0到num之间随机生成一个整数</span><br>        x=rd.nextInt(<span class="hljs-number">512</span>-w);<br>        y=-h;<br>        <span class="hljs-comment">//设置速度</span><br>        speed=<span class="hljs-number">17</span>-index;<br>        <span class="hljs-keyword">if</span>(index&lt;=<span class="hljs-number">4</span>)&#123;<br>            hp=<span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(index&gt;<span class="hljs-number">4</span>&amp;&amp;index&lt;=<span class="hljs-number">8</span>)&#123;<br>            hp=<span class="hljs-number">2</span>;<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(index&gt;<span class="hljs-number">8</span>&amp;&amp;index&lt;<span class="hljs-number">14</span>)&#123;<br>            hp=index/<span class="hljs-number">3</span>;<br>        &#125;<span class="hljs-keyword">else</span><br>            hp=index/<span class="hljs-number">2</span>;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 敌机移动的方法</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">()</span></span>&#123;<br>        y+=speed;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 判断敌机是否被子弹打中</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> f</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">shootBy</span><span class="hljs-params">(Fire f)</span> </span>&#123;<br>        <span class="hljs-keyword">boolean</span> hit=x&lt;=f.x+f.w<br>                &amp;&amp;x&gt;f.x-w  &amp;&amp;<br>                y&lt;=f.y+f.h &amp;&amp;<br>                y&gt;f.y-h;<br>        <span class="hljs-keyword">return</span> hit ;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 敌机和英雄机碰撞</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> f</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">hitBy</span><span class="hljs-params">(HeroPanel f)</span> </span>&#123;<br>        <span class="hljs-keyword">boolean</span> hit=x&lt;=f.x+f.w<br>                &amp;&amp;x&gt;f.x-w  &amp;&amp;<br>                y&lt;=f.y+f.h &amp;&amp;<br>                y&gt;f.y-h;<br>        <span class="hljs-keyword">return</span> hit ;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="/2021/06/17/planewar/image-20210617191011515.png" srcset="/img/loading.gif" lazyload alt="image-20210617191011515"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/06/05/springmvc/">
+                        <span class="hidden-mobile">SpringMVC</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
