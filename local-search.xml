@@ -4,6 +4,44 @@
   
   
   <entry>
+    <title>常考Java基础题</title>
+    <link href="/2021/06/23/faq/"/>
+    <url>/2021/06/23/faq/</url>
+    
+    <content type="html"><![CDATA[<h1 id="常考题"><a href="#常考题" class="headerlink" title="常考题"></a>常考题</h1><h2 id="1、Java基础"><a href="#1、Java基础" class="headerlink" title="1、Java基础"></a>1、Java基础</h2><p>Java中的53个关键字详解：<a href="https://blog.csdn.net/weixin_44893902/article/details/105204049">Java中的关键字有哪些？「Java中53个关键字的意义及使用方法」_杨明金的博客-CSDN博客_java关键字有哪些</a></p><p><strong>八大基本类型基本常识表</strong></p><p><a href="https://blog.csdn.net/weixin_42089228/article/details/104905036">Java八大基本类型详解_呆呆papa的博客-CSDN博客_八大基本类型</a></p><p><a href="https://blog.csdn.net/qq_37688023/article/details/85106894">java八种基本数据类型及包装类详解_一个Tester的博客-CSDN博客_java八种基本数据类型</a></p><p>位数单位：bits</p><p><img src="/2021/06/23/faq/20181219200330646.png" alt="img"></p><h3 id="1-1、final-finally-和-finalize的区别"><a href="#1-1、final-finally-和-finalize的区别" class="headerlink" title="1.1、final finally 和 finalize的区别"></a>1.1、final finally 和 finalize的区别</h3><p> final用于声明属性，方法和类，分别表示属性不可交变，方法不可覆盖，类不可继承。<br> finally是异常处理语句结构的一部分，表示总是执行。<br> finalize是Object类的一个方法，在垃圾收集器执行的时候会调用被回收对象的此方法，供垃圾收集时的其他资源回收，例如关闭文件等。</p><h3 id="1-2、Java中private、protected、public和default的区别"><a href="#1-2、Java中private、protected、public和default的区别" class="headerlink" title="1.2、Java中private、protected、public和default的区别"></a>1.2、Java中private、protected、public和default的区别</h3><p><strong>public:</strong></p><p>具有最大的访问权限，可以访问任何一个在classpath下的类、接口、异常等。它往往用于对外的情况，也就是对象或类对外的一种接口的形式。</p><p><strong>protected：</strong></p><p>主要作用是用保护子类的。它的含义在于子类可以用它修饰的成员，其他的不可以，它相当于传递给子类的一种继承的东西。</p><p><strong>default：</strong></p><p>有时也称为friendly，它是针对本包访问而设计的，任何处于本包下的类、接口、异常等，都可以相互访问，即使是父类没有用protected修饰的成员也可以。</p><p><strong>private：</strong></p><p>访问权限仅限于类的内部，是一种封装的体现，例如：大多数成员变量都是修饰符为private的，它们不希望被其他任何外部的类访问。</p><p><img src="/2021/06/23/faq/1.2_1.png" alt="1.2_1"></p><p>注意：java的访问控制是停留在编译层的，也就是它不会在.class文件中留下任何的痕迹，只在编译的时候进行访问控制的检查。其实，通过反射的手段，是可以访问任何包下任何类中的成员，例如，访问类的私有成员也是可能的。</p><p><strong>区别：</strong></p><p><strong>public：可以被所有其他类所访问</strong></p><p><strong>private：只能被自己访问和修改</strong></p><p><strong>protected：自身、子类及同一个包中类可以访问</strong></p><p><strong>default：同一包中的类可以访问，声明时没有加修饰符，认为是friendly。</strong></p><h2 id="2、面向对象基础"><a href="#2、面向对象基础" class="headerlink" title="2、面向对象基础"></a>2、面向对象基础</h2><h2 id="3、面向对象高级"><a href="#3、面向对象高级" class="headerlink" title="3、面向对象高级"></a>3、面向对象高级</h2><h3 id="3-1、finally块在以下几种情况将不会执行"><a href="#3-1、finally块在以下几种情况将不会执行" class="headerlink" title="3.1、finally块在以下几种情况将不会执行"></a>3.1、finally块在以下几种情况将不会执行</h3><p><strong>try-catch-finally块中，finally块在以下几种情况将不会执行。</strong></p><p>（1）finally块中发生了异常。</p><p>（2）程序所在线程死亡。</p><p>（3）在前面的代码中用了System.exit（）；</p><p>（4）关闭了CPU</p><h2 id="4、多线程"><a href="#4、多线程" class="headerlink" title="4、多线程"></a>4、多线程</h2><h2 id="5、泛型"><a href="#5、泛型" class="headerlink" title="5、泛型"></a>5、泛型</h2><h2 id="6、Java常用类库"><a href="#6、Java常用类库" class="headerlink" title="6、Java常用类库"></a>6、Java常用类库</h2><h2 id="7、JavaIO"><a href="#7、JavaIO" class="headerlink" title="7、JavaIO"></a>7、JavaIO</h2><h2 id="8、Java类集框架"><a href="#8、Java类集框架" class="headerlink" title="8、Java类集框架"></a>8、Java类集框架</h2><h3 id="8-1、LinkedList和ArrayList区别"><a href="#8-1、LinkedList和ArrayList区别" class="headerlink" title="8.1、LinkedList和ArrayList区别"></a>8.1、LinkedList和ArrayList区别</h3><ol><li>ArrayList是实现了基于动态数组的数据结构，LinkedList基于链表的数据结构。 （LinkedList是双向链表，有next也有previous）</li><li>对于随机访问get和set，ArrayList觉得优于LinkedList，因为LinkedList要移动指针。 </li><li>对于新增和删除操作add和remove，LinedList比较占优势，因为ArrayList要移动数据。</li></ol><h3 id="8-2、HashMap和Hashtable的区别"><a href="#8-2、HashMap和Hashtable的区别" class="headerlink" title="8.2、HashMap和Hashtable的区别"></a>8.2、HashMap和Hashtable的区别</h3><p>HashMap和Hashtable的比较是Java面试中的常见问题，用来考验程序员是否能够正确使用集合类以及是否可以随机应变使用多种思路解决问题。HashMap的工作原理、ArrayList与Vector的比较以及这个问题是有关Java 集合框架的最经典的问题。Hashtable是个过时的集合类，存在于Java API中很久了。在Java 4中被重写了，实现了Map接口，所以自此以后也成了Java集合框架中的一部分。Hashtable和HashMap在Java面试中相当容易被问到，甚至成为了集合框架面试题中最常被考的问题，所以在参加任何Java面试之前，都不要忘了准备这一题。</p><p>这篇文章中，我们不仅将会看到HashMap和Hashtable的区别，还将看到它们之间的相似之处。</p><p><strong>HashMap和Hashtable的区别</strong></p><p>HashMap和Hashtable都实现了Map接口，但决定用哪一个之前先要弄清楚它们之间的分别。主要的区别有：线程安全性，同步(synchronization)，以及速度。</p><ol><li>HashMap几乎可以等价于Hashtable，除了HashMap是非synchronized的，并可以接受null(HashMap可以接受为null的键值(key)和值(value)，而Hashtable则不行)。</li><li>HashMap是非synchronized，而Hashtable是synchronized，这意味着Hashtable是线程安全的，多个线程可以共享一个Hashtable；而如果没有正确的同步的话，多个线程是不能共享HashMap的。Java 5提供了ConcurrentHashMap，它是HashTable的替代，比HashTable的扩展性更好。</li><li>另一个区别是HashMap的迭代器(Iterator)是fail-fast迭代器，而Hashtable的enumerator迭代器不是fail-fast的。所以当有其它线程改变了HashMap的结构（增加或者移除元素），将会抛出ConcurrentModificationException，但迭代器本身的remove()方法移除元素则不会抛出ConcurrentModificationException异常。但这并不是一个一定发生的行为，要看JVM。这条同样也是Enumeration和Iterator的区别。</li><li>由于Hashtable是线程安全的也是synchronized，所以在单线程环境下它比HashMap要慢。如果你不需要同步，只需要单一线程，那么使用HashMap性能要好过Hashtable。</li><li>HashMap不能保证随着时间的推移Map中的元素次序是不变的。</li></ol><p><strong>要注意的一些重要术语：</strong></p><ol><li><p>sychronized意味着在一次仅有一个线程能够更改Hashtable。就是说任何线程要更新Hashtable时要首先获得同步锁，其它线程要等到同步锁被释放之后才能再次获得同步锁更新Hashtable。</p></li><li><p>Fail-safe和iterator迭代器相关。如果某个集合对象创建了Iterator或者ListIterator，然后其它的线程试图“结构上”更改集合对象，将会抛出ConcurrentModificationException异常。但其它线程可以通过set()方法更改集合对象是允许的，因为这并没有从“结构上”更改集合。但是假如已经从结构上进行了更改，再调用set()方法，将会抛出IllegalArgumentException异常。</p></li><li><p>结构上的更改指的是删除或者插入一个元素，这样会影响到map的结构。</p></li></ol><p><strong>我们能否让HashMap同步？</strong></p><p>HashMap可以通过下面的语句进行同步：<br> Map m = Collections.synchronizeMap(hashMap);</p><p><strong>结论</strong></p><p>Hashtable和HashMap有几个主要的不同：线程安全以及速度。仅在你需要完全的线程安全的时候使用Hashtable，而如果你使用Java 5或以上的话，请使用ConcurrentHashMap吧</p><h3 id="8-3、为什么HashMap线程不安全"><a href="#8-3、为什么HashMap线程不安全" class="headerlink" title="8.3、为什么HashMap线程不安全"></a>8.3、为什么HashMap线程不安全</h3><p>HashMap会进行resize操作，在resize操作的时候会造成线程不安全。</p><p>1、put的时候导致的多线程数据不一致。</p><p>2、另外一个比较明显的线程不安全的问题是HashMap的get操作可能因为resize而引起死循环（cpu100%）。</p><p>详细请看：<a href="https://www.jianshu.com/p/e2f75c8cce01">为什么HashMap线程不安全 - 简书 (jianshu.com)</a></p><h2 id="9、MySQL"><a href="#9、MySQL" class="headerlink" title="9、MySQL"></a>9、MySQL</h2><h3 id="9-1、B树和B-树的区别"><a href="#9-1、B树和B-树的区别" class="headerlink" title="9.1、B树和B+树的区别"></a>9.1、B树和B+树的区别</h3><ol><li><p><strong>B树的每个节点存储了key和data</strong>，key是一条数据记录的键值<br>，是唯一的，data存储的是数据记录除key以外的数据。而<strong>B+树只在叶子节点存储data数据</strong>，这样非叶子节点就能存储更多的key。所以B+树相较于B树来说更加的矮胖，因为索引树很大不能一次IO读取进内存，树的深度越浅，查找数据时IO的次数就越少，效率就更快。</p></li><li><p><strong>B+树的每个叶子节点的指针指向相邻的叶子节点</strong>，构成一个有序链表，可以按照关键码排序的次序遍历全部记录。由于数据顺序排列并且相连，所以便于区间查找和搜索。<strong>而B树叶子节点指针为null</strong>，则需要进行每一层的递归遍历。相邻的元素可能在内存中不相邻，所以缓存命中性没有B+树好。</p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>JAVA基础</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Java关键字详解</title>
+    <link href="/2021/06/23/keyword/"/>
+    <url>/2021/06/23/keyword/</url>
+    
+    <content type="html"><![CDATA[<h2 id="53个Java关键字"><a href="#53个Java关键字" class="headerlink" title="53个Java关键字"></a>53个Java关键字</h2><p>原文链接：<a href="https://blog.csdn.net/weixin_44893902/article/details/105204049">Java中的关键字有哪些？「Java中53个关键字的意义及使用方法」_杨明金的博客-CSDN博客_java关键字有哪些</a></p><h3 id="Java中的关键字有哪些？"><a href="#Java中的关键字有哪些？" class="headerlink" title="Java中的关键字有哪些？"></a>Java中的关键字有哪些？</h3><p>1）48个关键字：abstract、assert、boolean、break、byte、case、catch、char、class、continue、default、do、double、else、enum、extends、final、finally、float、for、if、implements、import、int、interface、instanceof、long、native、new、package、private、protected、public、return、short、static、strictfp、super、switch、synchronized、this、throw、throws、transient、try、void、volatile、while。</p><p>2）2个保留字（现在没用以后可能用到作为关键字）：goto、const。</p><p>3）3个特殊直接量：true、false、null。</p><h3 id="1-Java的关键字（keyword）有多少个？"><a href="#1-Java的关键字（keyword）有多少个？" class="headerlink" title="1.Java的关键字（keyword）有多少个？"></a>1.Java的关键字（keyword）有多少个？</h3><p>  51+2个保留字=53个关键字(java的关键字都是小写的！！)</p><p>2.Java的保留字(reserve word)有多少个？分别是什么？<br>     2个保留字</p><p>​     Java语言的的保留字是指预留的关键字    </p><p>   1).const  有道释义：n. 常量，常数  </p><p>​            用于修改字段或局部变量的声明。它指定字段或局部变量的值是常数，不能被修改</p><p>   2).goto   有道释义：vi. 转到</p><p>​             指定跳转到标签，找到标签后，程序将处理从下一行开始的命令。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>JAVA基础</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>了解Json、Ajax</title>
     <link href="/2021/06/22/json/"/>
     <url>/2021/06/22/json/</url>
