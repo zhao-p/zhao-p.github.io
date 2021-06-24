@@ -173,7 +173,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      295 字
+      2k 字
     </span>
   
 
@@ -183,7 +183,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      23
        分钟
     </span>
   
@@ -221,12 +221,360 @@
 <p>2）2个保留字（现在没用以后可能用到作为关键字）：goto、const。</p>
 <p>3）3个特殊直接量：true、false、null。</p>
 <h3 id="1-Java的关键字（keyword）有多少个？"><a href="#1-Java的关键字（keyword）有多少个？" class="headerlink" title="1.Java的关键字（keyword）有多少个？"></a>1.Java的关键字（keyword）有多少个？</h3><p>  51+2个保留字=53个关键字(java的关键字都是小写的！！)</p>
-<p>2.Java的保留字(reserve word)有多少个？分别是什么？<br>     2个保留字</p>
+<h3 id="2-Java的保留字-reserve-word-有多少个？分别是什么？"><a href="#2-Java的保留字-reserve-word-有多少个？分别是什么？" class="headerlink" title="2.Java的保留字(reserve word)有多少个？分别是什么？"></a>2.Java的保留字(reserve word)有多少个？分别是什么？</h3><p>​     2个保留字</p>
 <p>​     Java语言的的保留字是指预留的关键字    </p>
 <p>   1).const  有道释义：n. 常量，常数  </p>
 <p>​            用于修改字段或局部变量的声明。它指定字段或局部变量的值是常数，不能被修改</p>
 <p>   2).goto   有道释义：vi. 转到</p>
 <p>​             指定跳转到标签，找到标签后，程序将处理从下一行开始的命令。</p>
+<h3 id="3-Java的关键字分别是什么，作用是什么？"><a href="#3-Java的关键字分别是什么，作用是什么？" class="headerlink" title="3.Java的关键字分别是什么，作用是什么？"></a>3.Java的关键字分别是什么，作用是什么？</h3><p> 1).访问修饰符的关键字（共3个）</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>意思</th>
+<th>备注，常用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public</td>
+<td>公有的</td>
+<td>可跨包，（默认选择）</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>受保护的</td>
+<td>当前包内可用</td>
+</tr>
+<tr>
+<td>private</td>
+<td>私有的</td>
+<td>当前类可用</td>
+</tr>
+</tbody></table>
+<p> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/jingmengxintang/p/5898900.html">Java中private、protected、public和default的区别 - jingmengxintang - 博客园 (cnblogs.com)</a></p>
+<p> 2).定义类、接口、抽象类和实现接口、继承类的关键字、实例化对象（共6个）</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>意思</th>
+<th>备注，常用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>class</td>
+<td>类</td>
+<td>public class A(){} 花括号里有已实现方法体，类名需要与文件名相同</td>
+</tr>
+<tr>
+<td>interface</td>
+<td>接口</td>
+<td>public interface B(){} 花括号里有方法体，但没有实现，方法体句子后面是英文分号“:”结尾</td>
+</tr>
+<tr>
+<td>abstract</td>
+<td>声明抽象</td>
+<td>public abstract class C(){} 介于类与接口中间，可以有也可以没有已经实现的方法体<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zuotongbin/p/11717010.html">Java基础知识详解：abstract修饰符 - 我的小叮当 - 博客园 (cnblogs.com)</a></td>
+</tr>
+<tr>
+<td>implements</td>
+<td>实现</td>
+<td>用于类或接口实现接口public class A interface B(){}</td>
+</tr>
+<tr>
+<td>extends</td>
+<td>继承</td>
+<td>用于类继承类 public class A extends D(){}</td>
+</tr>
+<tr>
+<td>new</td>
+<td>创建新对象</td>
+<td>A a=new A(); A表示一个类</td>
+</tr>
+</tbody></table>
+<p> 3).包的关键字（共2个）</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>意思</th>
+<th>备注，常用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>import</td>
+<td>引入包的关键字</td>
+<td>当使用某个包的一些类时，仅需类名 然后使用ctrl+shift+o或者选定类名（类或属性或方法）按住ctrl+单击 即可自动插入类所在的包。如：JFrame 快捷键之后自动加入 <br><strong>import</strong> javax.swing.JFrame;</td>
+</tr>
+<tr>
+<td>package</td>
+<td>定义包的关键字</td>
+<td>将所有有关的类放在一个包类以便查找修改等。如：<strong>package</strong> javake.flycat.draw002;</td>
+</tr>
+</tbody></table>
+<p> 4).数据类型的关键字（共12个）</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>意思</th>
+<th>备注，常用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>字节型</td>
+<td>8bit</td>
+</tr>
+<tr>
+<td>char</td>
+<td>字符型</td>
+<td>16bit</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>布尔型</td>
+<td>–</td>
+</tr>
+<tr>
+<td>short</td>
+<td>短整型</td>
+<td>16bit</td>
+</tr>
+<tr>
+<td>int</td>
+<td>整型</td>
+<td>32bit</td>
+</tr>
+<tr>
+<td>float</td>
+<td>浮点型</td>
+<td>32bit</td>
+</tr>
+<tr>
+<td>long</td>
+<td>长整型</td>
+<td>64bit</td>
+</tr>
+<tr>
+<td>double</td>
+<td>双精度</td>
+<td>64bit</td>
+</tr>
+<tr>
+<td>void</td>
+<td>无返回</td>
+<td>public void A(){}  其他需要返回的经常与return连用</td>
+</tr>
+<tr>
+<td>null</td>
+<td>空值</td>
+<td></td>
+</tr>
+<tr>
+<td>true</td>
+<td>真</td>
+<td></td>
+</tr>
+<tr>
+<td>false</td>
+<td>假</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>  5).条件循环（流程控制）（共12个）</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>意思</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>if</td>
+<td>如果</td>
+<td>if(){} 如果小括号里面怎么怎么样 花括号就怎么怎么样</td>
+</tr>
+<tr>
+<td>else</td>
+<td>否则，或者</td>
+<td>常与if连用，用法相同</td>
+</tr>
+<tr>
+<td>while</td>
+<td>当什么的时候</td>
+<td>while 怎么样就do什么  while(){}</td>
+</tr>
+<tr>
+<td>for</td>
+<td>满足三个条件时</td>
+<td>for ( ; ; ){}</td>
+</tr>
+<tr>
+<td>switch</td>
+<td>开关</td>
+<td>switch(表达式)<br>{<br>case 常量表达式1:语句1;<br>….<br>case 常量表达式2:语句2;<br>default:语句;<br>}<br>default就是如果没有符合的case就执行它,default并不是必须的.<br>case后的语句可以不用大括号.<br>switch语句的判断条件可以接受int,byte,char,short,不能接受其他类型.<br></td>
+</tr>
+<tr>
+<td>case</td>
+<td>返回开关里的结果</td>
+<td></td>
+</tr>
+<tr>
+<td>default</td>
+<td>默认</td>
+<td></td>
+</tr>
+<tr>
+<td>do</td>
+<td>运行</td>
+<td>长与while连用</td>
+</tr>
+<tr>
+<td>break</td>
+<td>跳出循环</td>
+<td></td>
+</tr>
+<tr>
+<td>continue</td>
+<td>继续</td>
+<td>中断本次循环，并并开始下一次</td>
+</tr>
+<tr>
+<td>return</td>
+<td>返回</td>
+<td>return 一个返回值类型</td>
+</tr>
+<tr>
+<td>instanceof</td>
+<td>实例</td>
+<td>一个二元操作符，和==，&gt;，&lt;是同一类的。测试它左边的对象是否是它右边的类的实例，返回boolean类型的数据</td>
+</tr>
+</tbody></table>
+<p>  6).修饰方法、类、属性和变量（共9个）</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>意思</th>
+<th>备注，常用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>static</td>
+<td>静态的</td>
+<td>属性和方法都可以用static修饰，直接使用类名.属性和方法名。 只有内部类可以使用static关键字修饰，调用直接使用类名.内部类类名进行调用。  static可以独立存在。静态块<br><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1601254463089390982&wfr=spider&for=pc">Java之static静态关键字详解 (baidu.com)</a></td>
+</tr>
+<tr>
+<td>final</td>
+<td>最终的不可被改变的</td>
+<td>方法和类都可以用final来修饰<br>final修饰的类是不能被继承的<br>final修饰的方法是不能被子类重写。<br>常量的定义：<br>final修饰的属性就是常量。<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wangwudi/p/12312001.html">final关键字详解 - 认真的王无敌 - 博客园 (cnblogs.com)</a></td>
+</tr>
+<tr>
+<td>super</td>
+<td>调用父类的方法</td>
+<td>常见<strong>public</strong> <strong>void</strong> paint(Graphics g){<br><strong>super</strong>.paint(g); ··· }<br><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/6394.html">Java super关键字详解 (biancheng.net)</a></td>
+</tr>
+<tr>
+<td>this</td>
+<td>当前类的父类的对象</td>
+<td>调用当前类中的方法（表示调用这个方法的对象）<br>this.addActionListener(al):等等<br><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/953.html">Java this关键字详解（3种用法） (biancheng.net)</a></td>
+</tr>
+<tr>
+<td>native</td>
+<td>本地</td>
+<td></td>
+</tr>
+<tr>
+<td>strictfp</td>
+<td>严格,精准</td>
+<td></td>
+</tr>
+<tr>
+<td>synchronized</td>
+<td>线程,同步</td>
+<td><a target="_blank" rel="noopener" href="https://www.cnblogs.com/three-fighter/p/14396208.html">synchronized详解 - 三分恶 - 博客园 (cnblogs.com)</a></td>
+</tr>
+<tr>
+<td>transient</td>
+<td>短暂</td>
+<td><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44543508/article/details/103232007">java中的transient关键字详解_宜春-CSDN博客_java transient</a></td>
+</tr>
+<tr>
+<td>volatile</td>
+<td>易失</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>static 例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;<br>    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>&#123;&#125; <span class="hljs-comment">//内部类</span><br>    ActionListener al=<span class="hljs-keyword">new</span> ActionListener(···)&#123;&#125;	<span class="hljs-comment">//匿名内部类</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>  静态块优先于其他方法/类的执行</p>
+<p>   7).错误处理（共5个）</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>意思</th>
+<th>备注，常用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>catch</td>
+<td>处理异常</td>
+<td>1.try+catch<br>程序的流程是：运行到try块中，如果有异常抛出，则转到catch块去处理。然后执行catch块后面的语句<br><br>2.try+catch+finally<br>程序的流程是：运行到try块中，如果有异常抛出，则转到catch块,catch块执行完毕后，执行finally块的代码，再执行finally块后面的代码。<br>如果没有异常抛出，执行完try块，也要去执行finally块的代码。然后执行finally块后面的语句<br><br>3.try+finally<br>程序的流程是：运行到try块中,如果有异常抛出的话，程序转向执行finally块的代码。那末finally块后面的代码还会被执行吗？不会！因为你没有处理异常，所以遇到异常后，执行完finally后，方法就已抛出异常的方式退出了。<br>这种方式中要注意的是，由于你没有捕获异常，所以要在方法后面声明抛出异常<br><br>(来自网上的资料)<br></td>
+</tr>
+<tr>
+<td>try</td>
+<td>捕获异常</td>
+<td></td>
+</tr>
+<tr>
+<td>finally</td>
+<td>有没有异常都执行</td>
+<td></td>
+</tr>
+<tr>
+<td>throw</td>
+<td>抛出一个异常对象</td>
+<td>一些可以导致程序出问题的因素,比如书写错误,逻辑错误或者是api的应用错误等等. 为了防止程序的崩溃就要预先检测这些因素,所以java 使用了异常这个机制.<br>在java中异常是靠 “抛出” 也就是英语的”throw” 来使用的,意思是如果发现到什么异常的时候就把错误信息 “抛出”</td>
+</tr>
+<tr>
+<td>throws</td>
+<td>声明一个异常可能被抛出</td>
+<td>把异常交给他的上级管理，自己不进行异常处理</td>
+</tr>
+</tbody></table>
+<p>  throw是你执行的动作。比如你觉得可能有异常，那么就抱出去 如：</p>
+<blockquote>
+<p>​    String a; if(a == null),</p>
+<p>​    throw new exception(“a为null”);</p>
+</blockquote>
+<pre><code>      所以throw是一个抛出去的动作
+</code></pre>
+<p>  throws只用在一个方法的末端，表示这个方法体内部如果有异常，这抛给它的调用者。 如： public void add(int a, int b) throws Exception(); 这个方法表示，在执行这个方法的时候，可能产生一个异常，如果产生异常了，那么谁调用了这个方法，就抛给谁。（来自百度）</p>
+<p> 8).其他（共2个）</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>意思</th>
+<th>备注，常用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>enum</td>
+<td>枚举，列举型别</td>
+<td></td>
+</tr>
+<tr>
+<td>assert</td>
+<td>断言</td>
+<td></td>
+</tr>
+</tbody></table>
 
             </div>
             <hr>
