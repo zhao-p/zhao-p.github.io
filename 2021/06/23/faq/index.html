@@ -173,7 +173,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2k 字
+      2.8k 字
     </span>
   
 
@@ -183,7 +183,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      21
+      30
        分钟
     </span>
   
@@ -218,6 +218,7 @@
             <div class="markdown-body">
               <h1 id="常考题"><a href="#常考题" class="headerlink" title="常考题"></a>常考题</h1><h2 id="1、Java基础"><a href="#1、Java基础" class="headerlink" title="1、Java基础"></a>1、Java基础</h2><p>Java中的53个关键字详解：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44893902/article/details/105204049">Java中的关键字有哪些？「Java中53个关键字的意义及使用方法」_杨明金的博客-CSDN博客_java关键字有哪些</a></p>
 <p><strong>八大基本类型基本常识表</strong></p>
+<p>数据类型分为<strong>基本数据类型</strong>（数值型、字符型、布尔型）和<strong>引用数据类型</strong>（类、接口、数组）</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42089228/article/details/104905036">Java八大基本类型详解_呆呆papa的博客-CSDN博客_八大基本类型</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37688023/article/details/85106894">java八种基本数据类型及包装类详解_一个Tester的博客-CSDN博客_java八种基本数据类型</a></p>
 <p>位数单位：bits</p>
@@ -238,17 +239,89 @@
 <p><strong>private：只能被自己访问和修改</strong></p>
 <p><strong>protected：自身、子类及同一个包中类可以访问</strong></p>
 <p><strong>default：同一包中的类可以访问，声明时没有加修饰符，认为是friendly。</strong></p>
+<h3 id="1-3、while和do-while的区别"><a href="#1-3、while和do-while的区别" class="headerlink" title="1.3、while和do while的区别"></a>1.3、while和do while的区别</h3><p><strong>while循环语法：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">while</span>(condition)&#123;<br>    loop body;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>do while循环语法：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">do</span>&#123;<br>    loop body;<br>&#125;<span class="hljs-keyword">while</span>(condition);<br></code></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th><strong>while循环</strong></th>
+<th><strong>do while循环</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>它是入口控制的循环。 这意味着在循环体开始时检查条件。</td>
+<td>这是退出控制循环。 这意味着在循环体的末端检查条件。</td>
+</tr>
+<tr>
+<td>如果条件为假，则不执行循环体。</td>
+<td>即使条件为假，循环体也会执行一次。</td>
+</tr>
+<tr>
+<td>通常不用于制作菜单驱动程序。</td>
+<td>通常用于制作菜单驱动程序。</td>
+</tr>
+</tbody></table>
 <h2 id="2、面向对象基础"><a href="#2、面向对象基础" class="headerlink" title="2、面向对象基础"></a>2、面向对象基础</h2><h2 id="3、面向对象高级"><a href="#3、面向对象高级" class="headerlink" title="3、面向对象高级"></a>3、面向对象高级</h2><h3 id="3-1、finally块在以下几种情况将不会执行"><a href="#3-1、finally块在以下几种情况将不会执行" class="headerlink" title="3.1、finally块在以下几种情况将不会执行"></a>3.1、finally块在以下几种情况将不会执行</h3><p><strong>try-catch-finally块中，finally块在以下几种情况将不会执行。</strong></p>
 <p>（1）finally块中发生了异常。</p>
 <p>（2）程序所在线程死亡。</p>
 <p>（3）在前面的代码中用了System.exit（）；</p>
 <p>（4）关闭了CPU</p>
-<h2 id="4、多线程"><a href="#4、多线程" class="headerlink" title="4、多线程"></a>4、多线程</h2><h2 id="5、泛型"><a href="#5、泛型" class="headerlink" title="5、泛型"></a>5、泛型</h2><h2 id="6、Java常用类库"><a href="#6、Java常用类库" class="headerlink" title="6、Java常用类库"></a>6、Java常用类库</h2><h2 id="7、JavaIO"><a href="#7、JavaIO" class="headerlink" title="7、JavaIO"></a>7、JavaIO</h2><h2 id="8、Java类集框架"><a href="#8、Java类集框架" class="headerlink" title="8、Java类集框架"></a>8、Java类集框架</h2><h3 id="8-1、LinkedList和ArrayList区别"><a href="#8-1、LinkedList和ArrayList区别" class="headerlink" title="8.1、LinkedList和ArrayList区别"></a>8.1、LinkedList和ArrayList区别</h3><ol>
+<h2 id="4、多线程"><a href="#4、多线程" class="headerlink" title="4、多线程"></a>4、多线程</h2><h2 id="5、泛型"><a href="#5、泛型" class="headerlink" title="5、泛型"></a>5、泛型</h2><h2 id="6、Java常用类库"><a href="#6、Java常用类库" class="headerlink" title="6、Java常用类库"></a>6、Java常用类库</h2><h3 id="6-1、String、StringBuffer、StringBuilder类"><a href="#6-1、String、StringBuffer、StringBuilder类" class="headerlink" title="6.1、String、StringBuffer、StringBuilder类"></a>6.1、String、StringBuffer、StringBuilder类</h3><p><strong>StringBuilder类</strong></p>
+<p>定义结构上StringBuilder类与StringBuffer类是完全相同的，而且两个类定义的方法功能也是相同的（具体见api文档）。但是：StringBuffer类中定义的方法全部使用synchronized进行同步定义，而StringBuilder没有，所以StringBuilder是异步的。</p>
+<p><strong>常见面试题：解释String、StringBuffer、StringBuilder的区别</strong></p>
+<ol>
+<li> String的内容一旦声明则不可改变，而StringBuffer和StringBuilder声明的内容可以改变。</li>
+<li> StringBuffer类中提供的方法都是同步方法，属于安全的线程操作，而StringBuilder类中的方法都属于异步的方法，属于非线程安全的操作。</li>
+</ol>
+<h2 id="7、JavaIO"><a href="#7、JavaIO" class="headerlink" title="7、JavaIO"></a>7、JavaIO</h2><h2 id="8、Java类集框架"><a href="#8、Java类集框架" class="headerlink" title="8、Java类集框架"></a>8、Java类集框架</h2><h3 id="8-1、list-map-set及所有子类-区别与使用总结"><a href="#8-1、list-map-set及所有子类-区别与使用总结" class="headerlink" title="8.1、list map set及所有子类 区别与使用总结"></a>8.1、list map set及所有子类 区别与使用总结</h3><p>括号为<strong>是否线程安全</strong></p>
+<p>list： LinkedList(no)     ArrayList(no)     Vector(<strong>yes</strong>)     Stack(<strong>yes</strong>)</p>
+<p>map:：HashMap(no)     LinkedHashMap(no)     HashTable(<strong>yes</strong>)     WeakHashMap     TreeMap</p>
+<p>set:：HashSet(no)     LinkedHashSet(no)     SortedSet     TreeSet</p>
+<p>最常用的好像为每行的前两个</p>
+<p><strong>特征:</strong></p>
+<ol>
+<li><p>Linked开头的适合快速插入,删除元素, linked维护元素插入的次序</p>
+</li>
+<li><p>Set 在 HashMap 的基础上实现, 所以Set结尾的key是不会重复的</p>
+</li>
+<li><p>Tree开头的是每次改变发生排序的, 速度慢</p>
+</li>
+</ol>
+<p><strong>适用:</strong></p>
+<ol>
+<li><p>需要快速插入，删除元素, 用 LinkedList; 需要快速随机访问元素，用 ArrayList</p>
+</li>
+<li><p>Vector 类似 ArrayList, 但是是同步的</p>
+</li>
+<li><p>Stack 继承 Vector , 是后进先出的堆栈</p>
+</li>
+<li><p>HashMap, put进去的对象位置会发生变化, LinkedHashMap 则不会</p>
+</li>
+<li><p>HashSet 是专门为快速查询而设计的, 插入会产生排序(LinkedHashSet 不会), 存入HashSet的对象必须定义hashCode方法</p>
+</li>
+<li><p>SortedSet 是保持元素的有序顺序的Set接口, 添加到 SortedSet 实现类的元素必须实现Comparable接口, TreeSet 类是它的唯一一份实现</p>
+</li>
+</ol>
+<p><strong>其它:</strong></p>
+<ol>
+<li><p>非同步的可以进行外部同步，或者使用Collections.synchronizedMap()的方法包装成一个thread-safe的Map/Set</p>
+</li>
+<li><p>LinkedHashMap支持两种排序：插入顺序、访问顺序。前者是指按照插入时的顺序排序，后者是指按照最旧使用到最近使用的顺序</p>
+</li>
+<li><p>既然 Set 在 HashMap 的基础上实现, 那么 HashMap 和 HashSet 有什么区别吗?</p>
+</li>
+</ol>
+<p>答: HashMap提供get和put方法, 允许null 值和null 键; HashSet 提供add、remove、contains和size方法, 允许null 元素; 其它未知</p>
+<h3 id="8-2、LinkedList和ArrayList区别"><a href="#8-2、LinkedList和ArrayList区别" class="headerlink" title="8.2、LinkedList和ArrayList区别"></a>8.2、LinkedList和ArrayList区别</h3><ol>
 <li>ArrayList是实现了基于动态数组的数据结构，LinkedList基于链表的数据结构。 （LinkedList是双向链表，有next也有previous）</li>
 <li>对于随机访问get和set，ArrayList觉得优于LinkedList，因为LinkedList要移动指针。 </li>
 <li>对于新增和删除操作add和remove，LinedList比较占优势，因为ArrayList要移动数据。</li>
 </ol>
-<h3 id="8-2、HashMap和Hashtable的区别"><a href="#8-2、HashMap和Hashtable的区别" class="headerlink" title="8.2、HashMap和Hashtable的区别"></a>8.2、HashMap和Hashtable的区别</h3><p>HashMap和Hashtable的比较是Java面试中的常见问题，用来考验程序员是否能够正确使用集合类以及是否可以随机应变使用多种思路解决问题。HashMap的工作原理、ArrayList与Vector的比较以及这个问题是有关Java 集合框架的最经典的问题。Hashtable是个过时的集合类，存在于Java API中很久了。在Java 4中被重写了，实现了Map接口，所以自此以后也成了Java集合框架中的一部分。Hashtable和HashMap在Java面试中相当容易被问到，甚至成为了集合框架面试题中最常被考的问题，所以在参加任何Java面试之前，都不要忘了准备这一题。</p>
+<h3 id="8-3、HashMap和Hashtable的区别"><a href="#8-3、HashMap和Hashtable的区别" class="headerlink" title="8.3、HashMap和Hashtable的区别"></a>8.3、HashMap和Hashtable的区别</h3><p>HashMap和Hashtable的比较是Java面试中的常见问题，用来考验程序员是否能够正确使用集合类以及是否可以随机应变使用多种思路解决问题。HashMap的工作原理、ArrayList与Vector的比较以及这个问题是有关Java 集合框架的最经典的问题。Hashtable是个过时的集合类，存在于Java API中很久了。在Java 4中被重写了，实现了Map接口，所以自此以后也成了Java集合框架中的一部分。Hashtable和HashMap在Java面试中相当容易被问到，甚至成为了集合框架面试题中最常被考的问题，所以在参加任何Java面试之前，都不要忘了准备这一题。</p>
 <p>这篇文章中，我们不仅将会看到HashMap和Hashtable的区别，还将看到它们之间的相似之处。</p>
 <p><strong>HashMap和Hashtable的区别</strong></p>
 <p>HashMap和Hashtable都实现了Map接口，但决定用哪一个之前先要弄清楚它们之间的分别。主要的区别有：线程安全性，同步(synchronization)，以及速度。</p>
@@ -271,11 +344,12 @@
 <p><strong>我们能否让HashMap同步？</strong></p>
 <p>HashMap可以通过下面的语句进行同步：<br> Map m = Collections.synchronizeMap(hashMap);</p>
 <p><strong>结论</strong></p>
-<p>Hashtable和HashMap有几个主要的不同：线程安全以及速度。仅在你需要完全的线程安全的时候使用Hashtable，而如果你使用Java 5或以上的话，请使用ConcurrentHashMap吧</p>
-<h3 id="8-3、为什么HashMap线程不安全"><a href="#8-3、为什么HashMap线程不安全" class="headerlink" title="8.3、为什么HashMap线程不安全"></a>8.3、为什么HashMap线程不安全</h3><p>HashMap会进行resize操作，在resize操作的时候会造成线程不安全。</p>
+<p>Hashtable和HashMap有几个主要的不同：线程安全以及速度。仅在你需要完全的线程安全的时候使用Hashtable，而如果你使用Java 5或以上的话，请使用ConcurrentHashMap吧‘</p>
+<h3 id="8-4、为什么HashMap线程不安全"><a href="#8-4、为什么HashMap线程不安全" class="headerlink" title="8.4、为什么HashMap线程不安全"></a>8.4、为什么HashMap线程不安全</h3><p>HashMap会进行resize操作，在resize操作的时候会造成线程不安全。</p>
 <p>1、put的时候导致的多线程数据不一致。</p>
 <p>2、另外一个比较明显的线程不安全的问题是HashMap的get操作可能因为resize而引起死循环（cpu100%）。</p>
 <p>详细请看：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e2f75c8cce01">为什么HashMap线程不安全 - 简书 (jianshu.com)</a></p>
+<p>面试详解：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1614620">面试 | HashMap 为什么线程不安全？ - 云+社区 - 腾讯云 (tencent.com)</a></p>
 <h2 id="9、MySQL"><a href="#9、MySQL" class="headerlink" title="9、MySQL"></a>9、MySQL</h2><h3 id="9-1、B树和B-树的区别"><a href="#9-1、B树和B-树的区别" class="headerlink" title="9.1、B树和B+树的区别"></a>9.1、B树和B+树的区别</h3><ol>
 <li><p><strong>B树的每个节点存储了key和data</strong>，key是一条数据记录的键值<br>，是唯一的，data存储的是数据记录除key以外的数据。而<strong>B+树只在叶子节点存储data数据</strong>，这样非叶子节点就能存储更多的key。所以B+树相较于B树来说更加的矮胖，因为索引树很大不能一次IO读取进内存，树的深度越浅，查找数据时IO的次数就越少，效率就更快。</p>
 </li>
