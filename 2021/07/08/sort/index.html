@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>排序算法总结 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/bg/bgpicture.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="排序算法总结">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-08 21:29" pubdate>
+        2021-07-8 9:29
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      23
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">排序算法总结</h1>
+            
+            <div class="markdown-body">
+              <h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><h2 id="1、插入排序"><a href="#1、插入排序" class="headerlink" title="1、插入排序"></a>1、插入排序</h2><p><strong>基本思想</strong></p>
+<p>通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
+<p><strong>算法描述</strong></p>
+<ol>
+<li><p>从第一个元素开始，该元素可以认为已经被排序</p>
+</li>
+<li><p>取出下一个元素，在已经排序的元素序列中从后向前扫描；    </p>
+</li>
+<li><p>如果该元素（已排序）大于新元素，将该元素移到下一位置；</p>
+</li>
+<li><p>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；</p>
+</li>
+<li><p>将新元素插入到该位置后；</p>
+<p>重复步骤2~5。</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] insertSort(<span class="hljs-keyword">int</span>[] a)&#123;<br>        <span class="hljs-keyword">int</span> preIndex, current;<br>        <span class="hljs-comment">//i作为本次循环确定取出的元素值下标</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; a.length; i++) &#123;<br>            <span class="hljs-comment">//preIndex为记录当前下标i需要从后往前的下标值</span><br>            preIndex = i - <span class="hljs-number">1</span>;<br>            <span class="hljs-comment">//取出本次循环的最后一个下标的元素值</span><br>            current = a[i];<br>            <span class="hljs-comment">//当比较的preIndex值还没越界，并且下标preIndex的元素值大于本次比较值current时</span><br>            <span class="hljs-comment">//preIndex 下标元素值后移，同时preIndex-- ，继续比较下一次</span><br>            <span class="hljs-keyword">while</span> (preIndex &gt;= <span class="hljs-number">0</span> &amp;&amp; a[preIndex] &gt; current)&#123;<br>                a[preIndex + <span class="hljs-number">1</span>] = a[preIndex];<br>                preIndex--;<br>            &#125;<br>            <span class="hljs-comment">//当preIndex检索的值已经移动完毕或者没有移动，需要将当前比较的current值重新插入序列中</span><br>            a[preIndex + <span class="hljs-number">1</span>] = current;<br>        &#125;<br>        <span class="hljs-keyword">return</span> a;<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="2、冒泡排序"><a href="#2、冒泡排序" class="headerlink" title="2、冒泡排序"></a>2、冒泡排序</h2><p>冒泡排序是交换排序中一种简单的排序方法。它的基本思想是对所有相邻记录的关键字值进行比效，如果是逆序则将其交换，最终达到有序化。其处理过程为： </p>
+<p>对序列从后向前依次将相邻记录的关键字进行比较，若逆序（arr[j]&lt;arr[j-1]）则将其交换，从而使得关键字值小的记录向上”飘浮”（左移），关键字值大的记录好像石块，向下“堕落”（右移）。</p>
+<p>用flag变量标记是否发生交换，如果没有交换则说明已经排好序了，就不用在继续比较了，此时flag=flase，结束循环，通过比较没有改进和改进后的c1和c2，会发现改进后的效率高。</p>
+<p>有些序列可能是3,42,4，66,67,68，这样66,67,68就不用再比较了啊，已经有序了，所以改进后减少了代码执行次数，提高了效率。</p>
+<blockquote>
+<p>优化后的冒泡排序</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] bubbleSort(<span class="hljs-keyword">int</span>[] a) &#123;<br>        <span class="hljs-keyword">int</span> temp = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">boolean</span> flag = <span class="hljs-keyword">true</span>;<span class="hljs-comment">//改进后的冒泡排序</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; a.length &amp;&amp; flag; i ++) &#123;<br>            flag = <span class="hljs-keyword">false</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; a.length; j ++) &#123;<br>                <span class="hljs-keyword">if</span> (a[i] &gt; a[j]) &#123;<br>                    temp = a[i];<br>                    a[i] = a[j];<br>                    a[j] = temp;<br>                    flag = <span class="hljs-keyword">true</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> a;<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="3、快速排序"><a href="#3、快速排序" class="headerlink" title="3、快速排序"></a>3、快速排序</h2><p><strong>基本思想</strong></p>
+<p> 每一轮的排序都会将区域分割成两个独立的分区，其中左分区的序列的所有值均会比右分区的所有值小。然后对子分区进行同样的分割操作，最后达到整体有序。在排序的过程中，由于已经分开的两部分的元素不需要进行比较，故减少了比较的次数，降低了排序时间。</p>
+<p><strong>详细描述</strong></p>
+<p>  首先在要排序的区域a 中选取一个基准值，而后将区域分成两个分区，其中左分区 b 中的元素均小于或者等于基准值，右分区 c 的元素 均大于或者等于中轴值，而后通过递归调用快速排序的过程分别对两个分区再次进行排序，最后将两个分区产生的结果合并即可得到最后的排序序列。</p>
+<p>“基准值”的选择有很多种方法。最简单的是使用分区中第一个元素值。但是如果输入的数组是正序或者逆序的，就会将所有的记录分到“基准值”的一边。较好的方法是随机选取“基准值”，这样可以减少原始输入对排序造成的影响。但是随机选取“基准值”的开销大。</p>
+<p><strong>算法思想</strong></p>
+<p>为了实现一次划分，我们可以从数组（假定数据是存在数组中）的两端移动下标，必要时交换记录，直到数组两端的下标相遇为止。为此，我们附设两个指针（下标）i 和 j， 先通过 j 从当前区域的右端向左扫描，越过大于等于基准值的记录。当遇到小于基准值的记录时，扫描停止。然后，通过 i 从当前区域的左端向右扫描，越过小于基准值的记录。当遇到大于等于基准值的记录时，扫描停止。交换两个方向扫描停止的记录 a[j] 与 a[i]。 然后，继续扫描，直至 i 与 j 相遇为止，本轮扫描和交换的过程结束。这时i左边的记录的关键字值都小于基准值，右边的记录的关键字值都大于等于基准值。</p>
+<p>最后，当前下标i=j,交换规则使得下标i左边的元素值一定会小于等于基准值，i右边元素值一定会大于等于基准值。所以最后一步是将当前i下标元素值与基准值交换。完成一轮快排，递归，同样对子分区进行操作，直至快排结束。</p>
+<p>　通过两个不相邻元素交换，可以一次交换消除多个逆序，加快排序速度。快速排序方法在要排序的数据已经有序的情况下最不利于发挥其长处。</p>
+<p><strong>源码实现</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">QuickSortDemo</span> </span>&#123;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> arr[]=&#123;<span class="hljs-number">6</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">7</span>,<span class="hljs-number">9</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">10</span>,<span class="hljs-number">8</span>&#125;;<br>	<span class="hljs-comment">//快排方法</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] quickSort01(<span class="hljs-keyword">int</span> left,<span class="hljs-keyword">int</span> right) &#123;<br><br>        <span class="hljs-keyword">int</span> temp = arr[left];<span class="hljs-comment">//基准数</span><br>        <span class="hljs-keyword">int</span> i = left;<br>        <span class="hljs-keyword">int</span> j = right;<br>        <span class="hljs-keyword">if</span> (left &gt; right) &#123;<br>            <span class="hljs-keyword">return</span> arr;<br>        &#125;<br>        <span class="hljs-keyword">while</span> (i != j) &#123;<br>            <span class="hljs-comment">//顺序很重要，要先从右边开始找 ，直到找到一个小于基准的值</span><br>            <span class="hljs-keyword">while</span> (arr[j] &gt;= temp &amp;&amp; i &lt; j) &#123;<br>                j--;<br>            &#125;<br>            <span class="hljs-comment">//再找右边的 ，直到找到一个大于基准的值</span><br>            <span class="hljs-keyword">while</span> (arr[i] &lt;= temp &amp;&amp; i &lt; j) &#123;<br>                i++;<br>            &#125;<br>            <span class="hljs-comment">//数据交换</span><br>            <span class="hljs-keyword">if</span> (i &lt; j) &#123;<br>                <span class="hljs-keyword">int</span> t = arr[i];<br>                arr[i] = arr[j];<br>                arr[j] = t;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">//基准数归位</span><br>        arr[left] = arr[i];<br>        arr[i] = temp;<br>        <span class="hljs-keyword">if</span> (left &lt; i - <span class="hljs-number">1</span>) &#123;<br>            quickSort01(left, i - <span class="hljs-number">1</span>);<br>        &#125;<br>        <span class="hljs-keyword">if</span> (right &gt; j + <span class="hljs-number">1</span>) &#123;<br>            quickSort01(i + <span class="hljs-number">1</span>, right);<br>        &#125;<br>        <span class="hljs-keyword">return</span> arr;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        System.out.println(Arrays.toString(quickSort01(<span class="hljs-number">0</span>, arr.length - <span class="hljs-number">1</span>)));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="4、选择排序"><a href="#4、选择排序" class="headerlink" title="4、选择排序"></a>4、选择排序</h2><p>​    简单选择排序是最简单直观的一种算法，每一趟从待排序的数据元素中选择最小（或最大）的一个元素作为首元素，直到所有元素排完为止，简单选择排序是不稳定排序。</p>
+<p>​    在算法实现时，每一轮确定最小元素的时候会通过不断地比较交换来使得首位置为当前最小，交换是个比较耗时的操作。其实我们很容易发现，在还未完全确定当前最小元素之前，这些交换都是无意义的。</p>
+<p>​    因此可以通过设置一个变量min，每一次比较出存储较小元素，并且记录当前元素的数组下标，当本轮循环结束之后，那这个变量min存储的就是当前最小元素的下标，此时再执行交换操作,以此确定本轮遍历的最小元素放到了数组前部。</p>
+<p><img src="/2021/07/08/sort/image-20210703112213135.png" srcset="/img/loading.gif" lazyload alt="image-20210703112213135"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] selectSort(<span class="hljs-keyword">int</span>[] a)&#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; a.length-<span class="hljs-number">1</span>; i++)&#123;<br>            <span class="hljs-keyword">int</span> min = i;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; a.length; j++)&#123;<br>                <span class="hljs-keyword">if</span> (a[j] &lt; a[min]) &#123;<br>                    min = j;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (min != i) &#123;<br>                <span class="hljs-keyword">int</span> temp = a[i];<br>                a[i] = a[min];<br>                a[min] = temp;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> a;<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="5、堆排序"><a href="#5、堆排序" class="headerlink" title="5、堆排序"></a>5、堆排序</h2>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/06/24/arithmetic/">
+                        <span class="hidden-mobile">算法题解析</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

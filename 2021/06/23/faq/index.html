@@ -343,8 +343,8 @@
 <p>答: HashMap提供get和put方法, 允许null 值和null 键; HashSet 提供add、remove、contains和size方法, 允许null 元素; 其它未知</p>
 <h3 id="8-2、LinkedList和ArrayList区别"><a href="#8-2、LinkedList和ArrayList区别" class="headerlink" title="8.2、LinkedList和ArrayList区别"></a>8.2、LinkedList和ArrayList区别</h3><ol>
 <li>ArrayList是实现了基于动态数组的数据结构，LinkedList基于链表的数据结构。 （LinkedList是双向链表，有next也有previous）</li>
-<li>对于随机访问get和set，ArrayList觉得优于LinkedList，因为LinkedList要移动指针。 </li>
-<li>对于新增和删除操作add和remove，LinedList比较占优势，因为ArrayList要移动数据。</li>
+<li>对于随机访问get和set，ArrayList绝对优于LinkedList，因为LinkedList要移动指针。 </li>
+<li>对于新增和删除操作add和remove，LinkedList比较占优势，因为ArrayList要移动数据。</li>
 </ol>
 <h3 id="8-3、HashMap和Hashtable的区别"><a href="#8-3、HashMap和Hashtable的区别" class="headerlink" title="8.3、HashMap和Hashtable的区别"></a>8.3、HashMap和Hashtable的区别</h3><p>HashMap和Hashtable的比较是Java面试中的常见问题，用来考验程序员是否能够正确使用集合类以及是否可以随机应变使用多种思路解决问题。HashMap的工作原理、ArrayList与Vector的比较以及这个问题是有关Java 集合框架的最经典的问题。Hashtable是个过时的集合类，存在于Java API中很久了。在Java 4中被重写了，实现了Map接口，所以自此以后也成了Java集合框架中的一部分。Hashtable和HashMap在Java面试中相当容易被问到，甚至成为了集合框架面试题中最常被考的问题，所以在参加任何Java面试之前，都不要忘了准备这一题。</p>
 <p>这篇文章中，我们不仅将会看到HashMap和Hashtable的区别，还将看到它们之间的相似之处。</p>
